@@ -5,6 +5,7 @@ for name in $@; do
         	echo "User $name already exists"
 	else
         	echo "Creating new user $name ..."
-        	useradd -m $name
+		useradd -m -p '' $name
+		passwd --expire $name
 	fi	
 done
